@@ -1,0 +1,35 @@
+{
+  "name": "close_handler",
+  "version": "0.0.1",
+  "description": "Do callbacks on node.js app shut down",
+  "main": "close_handler.js",
+  "dependencies": {},
+  "engines": {
+    "node": "6.3.1",
+    "npm": "3.10.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:madeinstefano/close_handler.git"
+  },
+  "keywords": [
+    "node",
+    "callback",
+    "process",
+    "express.js"
+  ],
+  "contributors": [
+    {
+      "name": "Stéfano Zanata",
+      "email": "contato@szanata.com"
+    }
+  ],
+  "scripts": {
+    "test": "make test"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.0.2",
+    "rootpath": "0.1.2"
+  }
+}
