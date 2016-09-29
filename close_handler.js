@@ -30,7 +30,7 @@ const DisposableFnsFactory = {
 /**
 * default calback to handle exit points
 */
-function exitHandler( err ) {
+function exitHandler( event, err ) {
   blocks.forEach( handle => {
     handle.fns.forEach( fn => {
       fn.invoke( err );
@@ -46,17 +46,17 @@ function exitHandler( err ) {
 /**
 * @description Callback for end of execution
 */
-process.on( 'exit', exitHandler );
+process.on( 'exit', exitHandler.bind( this, 'exit' ) );
 
 /**
 * @description Catches ctrl + C
 */
-process.on( 'SIGINT', exitHandler );
+process.on( 'SIGINT', exitHandler.bind( this, 'SIGINT' ) );
 
 /**
 * @description Catches errors
 */
-process.on( 'uncaughtException', exitHandler );
+process.on( 'uncaughtException', exitHandler.bind( this, 'uncaughtException' ) );
 
 
 module.exports = {
