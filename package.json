@@ -1,6 +1,6 @@
 {
   "name": "close_handler",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Do callbacks on node.js app shut down",
   "main": "close_handler.js",
   "dependencies": {},

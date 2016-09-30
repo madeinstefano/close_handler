@@ -41,6 +41,10 @@ function exitHandler( event, err ) {
   if (err) {
     console.error(err.stack);
   }
+  
+  setTimeout(function () {
+    process.reallyExit();
+  }, 100);
 }
 
 /**

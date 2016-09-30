@@ -34,11 +34,11 @@ handler.add(function (err) {
 
 ### Result
 
-When the app for some reason is no longer running, **each** callback will be invoked **once** and **ONLY ONCE**!
+When the app for some reason is shut off, **each** callback will be invoked **once** and **ONLY ONCE**!
 
 ### Deregistering callbacks
 
-Sometimes a block of code, worker or loop ends, and the resources are no longer with lock states or something similar, so the callbacks are no longer need, so there is a `.release( )` instance method:
+Sometimes a block of code, worker or loop ends, and the resources are no longer with a locked state or something similar, thus the callbacks are no longer need, and for that exits a `.release( )` instance method:
 
 ```js
 // empty this handler
@@ -61,4 +61,4 @@ If the app just ends its life cycle, no arguments are passed.
 
 ### Async code
 
-It's kind of impossible to execute and **wait the response** from an async function before the execution terminates after the kill signal. But you can execute async code if you do not need to do anything with the response. I've tested MongoDb update and insert queries with mongoose, and it works flawless, just call the function and pray :).
+It's kind of impossible to execute and **wait the response** from an async function before the execution terminates after the kill signal, besides `SIGINT` which can be delayed. But you can execute async code if you do not need to do anything with the response. I've tested MongoDb update and insert queries with mongoose, and it works flawless, just call the functions.
